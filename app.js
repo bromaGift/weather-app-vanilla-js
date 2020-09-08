@@ -29,15 +29,15 @@ window.addEventListener("load", () => {
                 locationTimezone.textContent = data.name;
 
                 //formula for celcius
-               let fahrenheit = (temp * (9/5)) + 32;
+               let kelvin = (273.15 - temp);
 
                 //change temp to celcius/fahrenheit
                 temperatureSection.addEventListener('click', () => {
-                    if (temperatureSpan.textContent === "F") {
+                    if (temperatureSpan.textContent === "k") {
                         temperatureSpan.textContent = "C";
                         temperatureDegree.textContent = temp;
-                    } else {temperatureSpan.textContent = "F";
-                     temperatureDegree.textContent = Math.floor(fahrenheit);
+                    } else {temperatureSpan.textContent = "k";
+                     temperatureDegree.textContent = Math.floor(kelvin);
                     }
                 })
                  });
